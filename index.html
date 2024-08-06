@@ -1,0 +1,520 @@
+
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+
+<style>
+ .sideBar {
+    position: absolute;  /* 將元素設置為絕對定位 */
+    height: 1000px;  /* 設置元素高度為視窗的高度 */
+    width: 100vw;  /* 設置元素寬度為視窗的寬度 */
+    top: 0px;  /* 將元素定位在視窗的頂部 */
+    left: 0px;  /* 將元素定位在視窗的左側 */
+    background-color: #000000;  /* 設置背景顏色為黑色 */
+    transition-duration: 8s;  /* 設置過渡效果的持續時間為8秒 */
+    padding-bottom: 5px;  /* 在元素底部添加5個像素的內邊距 */
+    box-sizing: border-box;  /* 使用邊框盒模型，讓內邊距和邊框不會增加元素的寬度和高度 */
+}
+      
+        .quickBtn {
+         position: absolute;   
+            width: 250px;
+            height: 78px;
+            top: -8px;
+            left: 200px;
+            background-color: rgb(75 75 75 / 31%);;
+            border-radius: 40px;
+            cursor: pointer;
+            text-align: center;
+        }
+     
+        .quickBtn i {
+            font-size: 50px;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+        }
+
+   .quickBtn img {
+            width: 99.9%;
+            height: 99.9%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-origin: center;
+            transform: translate(-50%, -50%);
+        }
+
+        .quickBtn:hover{
+            background-color: rgb(193 129 129);  
+        }
+
+        #collapseBtn,
+           #collapseBtn1,
+        #baseStationBtn,
+        #infoBtn {
+            display: none;
+        }
+
+#toggleButton1 {
+background: linear-gradient(45deg, #ff0000, #ff0000, #ff0000, #ffffff, #ffffff, #ffffff, #ffffff, #ff0000, #ffffff);
+background-size: 600% 100%;
+  position: absolute;
+   border-radius: 1%;
+   cursor: pointer;
+   animation: rainbow 10s linear infinite;
+  position: absolute;
+  top: 1100px;
+  left: 470px;
+  transform: translate(-50%, -50%);
+  width: 230px;
+  height: 200px;
+  background-image: url("https://firebasestorage.googleapis.com/v0/b/my-panfan-1703431647456.appspot.com/o/apple.png?alt=media&token=a7086fdd-602d-479e-8f6b-93603e59da0d");
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: none;
+  outline: none;
+  border-radius: 100%; 
+
+}
+
+ .hidden {
+            display: none;
+        }
+
+ #toggleButton {
+  width: 170px;
+  height: 170px;
+ background: linear-gradient(45deg, #FF0000, #FFA500, #BFC1C2, #008000, #0000FF, #FFFFFF, #0000FF, #FF0000, #800080);
+ background-size: 600% 100%;
+  position: absolute;
+ top: 2500px;
+  left: 660px;
+   border-radius: 50%;
+   cursor: pointer;
+   animation: rainbow 0.5s linear infinite;
+      
+        }     
+        @keyframes rainbow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 100% 50%;
+            }
+        }
+
+.container {
+  border: 1px solid #000;
+  padding: 20px;
+  text-align: center;
+}
+        *,
+        *::before,
+        *::after {
+            margin: 1;
+            padding: 1;
+            box-sizing: border-box;
+        }
+
+body { background: url('https://media.tenor.com/MNVxgsGfaUQAAAAd/in-space-national-space-day.gif');
+background-color: #000000;
+
+font-family: Arial, sans-serif;
+            text-align: center;
+            background-image: url('9');
+            /* Replace with your image file path or URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+
+        .container {
+            margin: 50px auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .options {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .option-button {
+            flex: 1;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+       
+            display: flex;
+       
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-button:hover {
+            background-color: #2980b9;
+        }
+
+        @media screen and (max-width: 600px) {
+            .option-button {
+                flex-basis: 100%;
+                /* Make buttons take the full width of the screen */
+            }
+        }
+.tab-container {
+      width: 100%;
+    }
+
+    .tab-links {
+      display: flex;
+    }
+
+    .tab-link {
+  
+      background-color: #000000;
+      color: #ffff;
+      text-align: center;
+      font-size: 20px;
+      transition-duration: 1.6s;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.1);  
+      height: 80px; 
+      width: 80px; 
+    }
+
+    .tab-content {
+      display: none;
+    }
+    .tab-content iframe {
+      width: 100%;
+      height: 1800px;
+      border: none;
+    }
+
+
+#bb{
+height: 1800px;
+      width: 100%;
+
+}
+  </style>
+<script>
+function sideBarCollapse(checkif) {
+            let sideBar = document.querySelector(".sideBar");
+            let collapseBtn = document.querySelector('.quickBtn.collapseStatus');
+            if (checkif) {
+                sideBar.style.top = '0px';
+                collapseBtn1.style.transform = "rotate(0deg)";
+            } else {
+                sideBar.style.top = '1811px';
+                collapseBtn.style.transform = "rotate(0deg)";
+            }
+        }
+
+</script>
+<div class="sideBar">
+<iframe id="bb"  src="https://firebasestorage.googleapis.com/v0/b/my-app-5cac1.appspot.com/o/119-%E8%8B%97%E6%A0%97.html?alt=media&token=3d7da97a-b79b-48db-b636-7c41de4a3d58" frameborder="0">
+</iframe>
+
+<input id="collapseBtn" type="checkbox" onchange=sideBarCollapse(this.checked)> 
+<label for="collapseBtn" class="quickBtn collapseStatus" title="收合鈕">
+<img width="100" height="100" src="https://firebasestorage.googleapis.com/v0/b/my-panfan-1703431647456.appspot.com/o/uml%2Fa_bc97398db335a9bac1abf8d1981e170c.gif?alt=media&token=14428ddd-aa3c-460a-abd4-835db65a20e4" alt="">
+</label>
+</div>
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js'></script>
+</head>
+<body>
+ 
+   <script>
+        let contentVisible = true;
+        let originalBackground = document.body.style.background;
+        let initialX;
+        let initialY;
+        let xOffset = 0;
+        let yOffset = 0;
+        let active = false;
+
+        function onTouchStart(e) {
+            initialX = e.touches[0].clientX - xOffset;
+            initialY = e.touches[0].clientY - yOffset;
+            if (e.target === document.getElementById('toggleButton1')) {
+                active = true;
+            }
+        }
+
+        function onTouchMove(e) {
+            if (active) {
+                e.preventDefault();
+                xOffset = e.touches[0].clientX - initialX;
+                yOffset = e.touches[0].clientY - initialY;
+                document.getElementById('toggleButton1').style.transform = `translate(${xOffset}px, ${yOffset}px)`;
+            }
+        }
+
+        function onTouchEnd() {
+            initialX = xOffset;
+            initialY = yOffset;
+            active = false;
+        }
+
+        function toggleContent() {
+            const contentDiv = document.getElementById('content');
+            const body = document.querySelector('body');
+
+            if (contentVisible) {
+                contentDiv.classList.add('hidden'); // Hide content
+                body.style.background = 'black'; // Change background to black
+            } else {
+                contentDiv.classList.remove('hidden'); // Show content
+                body.style.background = originalBackground; // Restore original background
+            }
+
+            contentVisible = !contentVisible; // Toggle visibility flag
+        }
+    </script>
+
+     <button id="toggleButton1" ontouchstart="onTouchStart(event)" ontouchmove="onTouchMove(event)" onclick="toggleContent()"></button>
+    <div id="content">  
+
+   <script>
+    function openTab(event, tabName) {
+      var i, tabContent, tabLinks;
+      tabContent = document.getElementsByClassName("tab-content");
+      for (i = 0; i < tabContent.length; i++) {
+        tabContent[i].style.display = "none";
+      }
+      tabLinks = document.getElementsByClassName("tab-link");
+      for (i = 0; i < tabLinks.length; i++) {
+        tabLinks[i].className = tabLinks[i].className.replace(" active", "");
+      }
+      document.getElementById(tabName).style.display = "block";
+      event.currentTarget.className += " active";
+    }
+  </script>
+
+  <div id="mediaContainer">
+  <div class="tab-container">
+    <div class="tab-links">
+
+ <button class="tab-link" onclick="openTab(event, 'page01')">VD</button>    
+
+<button class="tab-link" onclick="openTab(event, 'p')">蘋果</button>    
+     
+<button class="tab-link" onclick="openTab(event, 'pa')">國搜</button>    
+
+<button class="tab-link" onclick="openTab(event, 'page')">屏東</button>    
+
+<button class="tab-link" onclick="openTab(event, 'page1')">台北</button>      
+
+<button class="tab-link" onclick="openTab(event, 'page2')">台南</button>      
+
+<button class="tab-link" onclick="openTab(event, 'page3')">嘉義縣</button>
+
+<button class="tab-link" onclick="openTab(event, 'page4')">嘉義市</button>
+
+<button class="tab-link" onclick="openTab(event, 'page5')">雲林</button>
+
+<button class="tab-link" onclick="openTab(event, 'page6')">彰化</button>
+
+<button class="tab-link" onclick="openTab(event, 'page7')">台中</button>      
+
+<button class="tab-link" onclick="openTab(event, 'page8')">南投</button>
+
+<button class="tab-link" onclick="openTab(event, 'page9')">苗栗</button>
+
+<button class="tab-link" onclick="openTab(event, 'page10')">新竹市</button>
+
+<button class="tab-link" onclick="openTab(event, 'page12')">新竹縣</button>
+
+
+<button class="tab-link" onclick="openTab(event, 'page14')">桃轅</button>
+
+<button class="tab-link" onclick="openTab(event, 'page15')">基隆</button>
+
+<button class="tab-link" onclick="openTab(event, 'page16')">花蓮</button>
+
+<button class="tab-link" onclick="openTab(event, 'page17')">宜蘭</button>
+
+<button class="tab-link" onclick="openTab(event, 'page18')">台東</button>
+
+
+<button class="tab-link" onclick="openTab(event, 'page19')">高雄</button>
+
+<button class="tab-link" onclick="openTab(event, 'page20')">新北(未)</button>
+
+
+<button class="tab-link" onclick="openTab(event, 'page21')">彭湖</button>
+
+
+<button class="tab-link" onclick="openTab(event, 'page22')">連江</button>
+
+<button class="tab-link" onclick="openTab(event, 'page23')">金門</button>
+
+
+</div>
+</div>
+
+<div id="page01" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-panfan-1703431647456.appspot.com/o/uml%2Fmp4.html?alt=media&token=9e55f401-b3c7-450c-8ae1-80afc4f8bff3">
+</iframe>
+</div>
+
+
+
+<!--<iframe src="http://[::]:8080/" width="900" height="200" style="border: none;"></iframe>-->
+
+<div id="p" class="tab-content">
+<iframe src="https://r3dhulk.github.io/fakemacosupdate/">
+</iframe>
+</div>
+<div id="pa" class="tab-content">
+<iframe src="https://taipeirccapp.nfa.gov.tw/Public/nrcc/rwd/">
+</iframe>
+</div>
+
+<div id="page" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fptff.html?alt=media&token=75b66626-907b-4d8a-9ed6-b0be02e7a6fe">
+</iframe>
+</div>
+
+<div id="page1" class="tab-content">
+<iframe src="http://210.241.86.142:8080/tyfdapp/StreetView.jsp?x=25.0292&y=121.568012">
+</iframe>
+</div>
+
+<div id="page2" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Ftnc.html?alt=media&token=47c30405-542b-4641-a0b5-c6d7437215ad">
+</iframe>
+</div>
+
+
+<div id="page3" class="tab-content">     
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fcyc.html?alt=media&token=a62f6244-efce-4e63-830b-0e9ab69948c3">
+</iframe>    
+</div>
+
+
+<div id="page4" class="tab-content">      
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fcy.html?alt=media&token=4d75b209-ec52-4e6d-94fd-0556d8f81cec">
+</iframe>
+</div>
+
+
+<div id="page5" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fyl.html?alt=media&token=0c5e4b6a-392a-44c6-811a-9663784c8fb0">
+</iframe>
+</div>
+
+
+<div id="page6" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fch.html?alt=media&token=426a91e4-c843-4c4a-988e-f3c2e25541a8">
+</iframe>
+</div>
+
+
+<div id="page7" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-panfan-1703431647456.appspot.com/o/atnc%2Ftcc.html?alt=media&token=f17068e2-1a75-4c4c-bc31-809d8377939c">
+</iframe>
+</div>
+
+
+<div id="page8" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fnt.html?alt=media&token=2e6cf59d-9443-4225-b950-6015c1e39129">
+</iframe>
+</div>
+
+<div id="page9" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fml.html?alt=media&token=28df5570-ee2f-4368-8c3a-eb4fbb1cd081">
+</iframe>
+</div>
+
+<div id="page10" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fhc.html?alt=media&token=e75035c0-5187-4bfb-a80a-9d792f3ed2a5">
+</iframe>
+</div>
+
+
+<div id="page12" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fhccg.html?alt=media&token=1adb4426-db56-4ed7-b6e6-4955c95f8c34">
+</iframe>
+</div>
+
+
+<div id="page14" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fty.html?alt=media&token=17303a81-04e9-4970-af95-ce2fa125d4e7">
+</iframe>
+</div>
+
+
+<div id="page15" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fklc.html?alt=media&token=37db81a1-ecb9-42b6-8f3f-23b2c26a9ea4">
+</iframe>
+</div>
+
+<div id="page16" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fhlc.html?alt=media&token=0f239e6a-2d55-4787-aa5c-a2a344e2eba9">
+</iframe>
+</div>
+
+<div id="page17" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fil.html?alt=media&token=b1bf5fad-ef47-46d0-be1b-73a1b5cb2f33">
+</iframe>
+</div>
+
+<div id="page18" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Ftt.html?alt=media&token=d701c92a-76e0-4789-8a58-0991eea06427">
+</iframe>
+</div>
+
+
+<div id="page19" class="tab-content">
+<iframe src="https://www.arcgis.com/apps/instant/portfolio/index.html?appid=6fce8f38a1f84e729d696c9c1748a7ef">
+</iframe>
+</div>
+
+
+<div id="page20" class="tab-content">
+<iframe src="#">
+</iframe>
+</div>
+
+<div id="page21" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fph.html?alt=media&token=556157de-7def-4b79-8c60-4d03a0d9b898">
+</iframe>
+</div>
+
+<div id="page22" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fms.html?alt=media&token=09f85b2f-610e-4767-a3e6-b53c4edfbafb">
+</iframe>
+</div>
+
+<div id="page23" class="tab-content">
+<iframe src="https://firebasestorage.googleapis.com/v0/b/my-app-e37e5.appspot.com/o/Tw%2Fkm.html?alt=media&token=12e6785d-67a4-45ef-bfec-f6f60017c2ad">
+</iframe>
+</div>
+ </div>
+   </div>
+</div>
+    </div>
+</body>
+</html>
+    
